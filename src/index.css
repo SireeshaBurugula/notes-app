@@ -11,10 +11,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-.note{
+.note{ 
   background-color:greenyellow;
   border-radius: 10 px;
-  padding: 1 rem;
+  padding: 10px;
   min-height: 170px;
   display:flex;
   flex-direction: column;
@@ -26,7 +26,6 @@ code {
   justify-content:space-evenly;
 }
 .notes-list{
-  
   gap: 1rem;
   width: 98%;
   padding: 1 rem;
@@ -62,3 +61,21 @@ code {
 .search input:focus{
   outline:none;
 }
+
+.ButtonCont {
+  align-items: center;
+  /* width:900 px; */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15 px;
+  padding-right: 15 px;
+  padding-top: 15 px;
+}
+ .Button{
+  display: grid;
+  margin-top: 40px;
+  margin-left: auto;
+  margin-bottom: 30px;
+  margin-right: auto;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+ }
