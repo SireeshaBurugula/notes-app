@@ -36,6 +36,7 @@ const App =() => {
       id:nanoid(),
       text:'sixth note',
     }
+    
   ]);
   return (
     <div className="container">
