@@ -85,13 +85,14 @@ code {
  }
 
 .color{
-  display: grid;
+  align-items: center;
+  /*display: grid;
   align-items: center;
   justify-content: space-between;
   margin-top: 40px;
   margin-left: auto;
   margin-bottom: 30px;
-  margin-right: auto;
+  margin-right: auto;*/
 }
 
 .colorpick{
@@ -125,4 +126,55 @@ code {
   100% {
     margin-top: 0%;
   }
+}
+.item1 {
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-bottom: 30px;
+  margin-right: auto;
+  background-color: blue;
+  border-radius: 50%;
+  box-shadow: rgba(0,0,0,0.2) 0px 8px 24px;
+}
+
+.item2 {
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-bottom: 30px;
+  margin-right: auto;
+  background-color: orange;
+  border-radius: 50%;
+  box-shadow: rgba(0,0,0,0.2) 0px 8px 24px;
+}
+
+.item3 {
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-bottom: 30px;
+  margin-right: auto;
+  background-color:rgb(46, 173, 46);
+  border-radius: 50%;
+  box-shadow: rgba(0,0,0,0.2) 0px 8px 24px;
+}
+
+.item4 {
+  align-items: center;
+  width: 18px;
+  height: 18px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-bottom: 30px;
+  margin-right: auto;
+  background-color: rgb(243, 61, 61);
+  border-radius: 50%;
+  box-shadow: rgba(0,0,0,0.2) 0px 8px 24px;
 }

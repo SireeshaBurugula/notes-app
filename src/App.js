@@ -42,7 +42,7 @@ const App =() => {
     <div className="container">
       <Search/>
       <NotesList notes={notes}/>
-      <Button/>
+      <Button class="side-bar"/>
     </div>
   );
 }
