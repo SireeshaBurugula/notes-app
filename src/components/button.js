@@ -4,6 +4,7 @@ import { MdAddCircle } from "react-icons/md";
 import { IoIosRadioButtonOn } from "react-icons/io";
 import { useTransition } from '@react-spring/core';
 import { animated } from '@react-spring/web';
+import { Split } from 'react-split';
 
 const PlusButton = () =>{
     const [colors,setcolors]= useState(false);
@@ -43,7 +44,6 @@ const PlusButton = () =>{
                 )}
             </div>
         </div>
-
     )
 }
 

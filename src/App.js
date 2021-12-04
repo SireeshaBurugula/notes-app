@@ -3,6 +3,7 @@ import Search from "./components/Search";
 import Button from "./components/button";
 import { nanoid } from 'nanoid';
 import  {useState} from 'react';
+import Split from 'react-split';
 
 
 const App =() => {
@@ -41,8 +42,12 @@ const App =() => {
   return (
     <div className="container">
       <Search/>
-      <NotesList notes={notes}/>
-      <Button class="side-bar"/>
+      <Split className='flex' sizes={[10,80]} style={{ height: 'calc(100vh - 4rem)' }}>
+        <Split direction='horizontal'>
+          <Button/>
+        </Split>
+        <NotesList notes={notes}/>
+      </Split>
     </div>
   );
 }

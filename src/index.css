@@ -70,6 +70,7 @@ code {
   padding-left: 30 px;
   padding-right: 15 px;
   padding-top: 15 px;
+  height:5px;
 }
 
 .Button{
@@ -177,4 +178,9 @@ code {
   background-color: rgb(243, 61, 61);
   border-radius: 50%;
   box-shadow: rgba(0,0,0,0.2) 0px 8px 24px;
+}
+
+.sidebar {
+  top:50px;
+  left:300px;
 }
