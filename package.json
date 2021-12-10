@@ -12,6 +12,9 @@
     "react-icons": "^4.3.1",
     "react-icons-md": "^1.1.0",
     "react-scripts": "^4.0.3",
+    "react-split": "^2.0.13",
+    "react-spring": "^9.0.0-rc.3",
+    "rsuite": "^5.2.4",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
