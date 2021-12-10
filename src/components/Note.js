@@ -1,14 +1,25 @@
+import { render } from "@testing-library/react";
 import React,{Component} from "react";
 import {MdEdit,MdDelete} from 'react-icons/md';
-const Note=({id,text}) =>{
+import EditNote from "./EditNote";
+const Note=({id,title,text}) =>{
+    /*function CallEditNote(id)
+    {
+        render(
+        <div>{id}</div>
+        )
+    }*/
     return(
         <div className="note">
-            <span>
+            <div >
+                <b>{title}</b>
+            </div>
+            <span >
                 {text}
             </span>
             <div className="note-footer">
-                <MdEdit/>
-                <MdDelete/>
+                <button /*onClick={() => CallEditNote(id)}*/ ><MdEdit/></button>
+                <button><MdDelete/></button>
             </div>
         </div>
     )

@@ -13,34 +13,77 @@ code {
 }
 .note{ 
   background-color:greenyellow;
-  border-radius: 10 px;
+  border-radius:3%;
   padding: 10px;
   min-height: 170px;
+  max-height: 250px;
   display:flex;
   flex-direction: column;
   justify-content: space-between;
+  overflow-wrap:break-word;
 }
+
+
+.note::after {
+  content: "";
+  border-radius: 3%;
+  position: absolute;
+  z-index: -1;
+  box-shadow: 0 15px 15px rgba(0, 0, 0, 0.75);
+  opacity: 0.5;
+  -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.note:hover {
+  border-radius:3% ;
+  box-shadow: 0 15px 15px rgba(0, 0, 0, 0.75);
+  -webkit-transform: scale(1.02, 1.02);
+  transform: scale(1.02, 1.02);
+}
+
+.note:hover::after {
+  border-radius:3% ;
+  box-shadow: 0 15px 15px rgba(0, 0, 0, 0.75);
+    opacity: 1;
+}
+
+.noteheader{
+  width:100%;
+  background-color:coral;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-top: auto;
+  margin-bottom: auto;
+  border-radius:10px;
+}
+
 .note-footer{
   display: flex;
   align-items: center;
   justify-content:space-evenly;
 }
-.notes-list{
+.note-footer button{
+  border-color:rgb(46, 173, 46);
+  background-color:greenyellow;
+  border-radius: 10px;
+  
+}
+.noteslist{
   gap: 1rem;
-  width: 98%;
+  width: 97%;
   padding: 1 rem;
   justify-content: space-between;
    display: grid;
    margin-left: auto;
    margin-bottom: auto;
    margin-right: auto;
+   padding-left: 2%;
    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
 }
 .container{
-  align-items: center;
-  width:900 px;
-  margin-left: auto;
-  margin-right: auto;
+  width:980 px;
+  margin-left:10px;
+  margin-right: 10px;
   padding-left: 15 px;
   padding-right: 15 px;
   padding-top: 15 px;
@@ -56,6 +99,7 @@ code {
 .search input{
   border: none;
   background-color:lightgray;
+  width:100%;
 
 }
 .search input:focus{
@@ -64,13 +108,14 @@ code {
 
 .ButtonCont {
   align-items: center;
-  /* width:900 px; */
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 30 px;
+  width:60px; 
+  margin-left:5px;
+  margin-right:5px;
+  padding-left: 15 px;
   padding-right: 15 px;
   padding-top: 15 px;
   height:5px;
+  
 }
 
 .Button{
@@ -80,7 +125,7 @@ code {
   margin-bottom: 30px;
   margin-right: auto;
   grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-  width: 63px;
+  width: 60px;
   border: none;
   border-radius: 70%;
  }
@@ -184,3 +229,5 @@ code {
   top:50px;
   left:300px;
 }
+
+

@@ -1,9 +1,9 @@
 import Note from "./Note"
 const NotesList = ({notes}) =>{
     return(
-        <div className="notes-list">
+        <div className="noteslist">
             { notes.map((note) => (
-                 <Note id={note.id} text={note.text}/>
+                 <Note id={note.id} title={note.title} text={note.text}/>
             ))}
         </div>
     )
