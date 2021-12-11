@@ -126,8 +126,8 @@ code {
   margin-right: auto;
   grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
   width: 60px;
+  border-radius: 75%;
   border: none;
-  border-radius: 70%;
  }
 
 .color{
@@ -184,6 +184,7 @@ code {
   background-color: rgb(101, 101, 202);
   border-radius: 50%;
   box-shadow: rgba(0,0,0,0.2) 0px 8px 24px;
+  border: none;
 }
 
 .item2 {
@@ -197,6 +198,7 @@ code {
   background-color: orange;
   border-radius: 50%;
   box-shadow: rgba(0,0,0,0.2) 0px 8px 24px;
+  border: none;
 }
 
 .item3 {
@@ -210,6 +212,7 @@ code {
   background-color:rgb(46, 173, 46);
   border-radius: 50%;
   box-shadow: rgba(0,0,0,0.2) 0px 8px 24px;
+  border: none;
 }
 
 .item4 {
@@ -223,6 +226,7 @@ code {
   background-color: rgb(243, 61, 61);
   border-radius: 50%;
   box-shadow: rgba(0,0,0,0.2) 0px 8px 24px;
+  border: none;
 }
 
 .sidebar {
