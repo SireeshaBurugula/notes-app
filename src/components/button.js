@@ -15,6 +15,9 @@ const PlusButton = () =>{
         leave: {x:0, y:-20, opacity: 0},
     })
     console.log(items);
+    const printsomething = () =>{
+        console.log("Hiii");
+    }
     return(
         <div class="ButtonCont">
             <button class="Button" onClick={() => {
@@ -25,22 +28,22 @@ const PlusButton = () =>{
 
            <button class="color">
                 {transition((style,item) => 
-                    item ? <animated.div style={style} class="item1 colorpick" /> : ''
+                    item ? <animated.button onClick={() => printsomething()} style={style} class="item1 colorpick" /> : ''
                 )}
             </button> 
             <div class="color">
                 {transition((style,item) => 
-                    item ? <animated.div style={style} class="item2 colorpick" /> : ''
+                    item ? <animated.button onClick={() => printsomething()} style={style} class="item2 colorpick" /> : ''
                 )}
             </div>
             <div class="color">
                 {transition((style,item) => 
-                    item ? <animated.div style={style} class="item3 colorpick" /> : ''
+                    item ? <animated.button onClick={() => printsomething()} style={style} class="item3 colorpick" /> : ''
                 )}
             </div>
             <div class="color">
                 {transition((style,item) => 
-                    item ? <animated.div style={style} class="item4 colorpick" /> : ''
+                    item ? <animated.button onClick={() => printsomething()} style={style} class="item4 colorpick" /> : ''
                 )}
             </div>
         </div>
