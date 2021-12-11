@@ -64,7 +64,7 @@ code {
 }
 .note-footer button{
   border-color:rgb(46, 173, 46);
-  background-color:greenyellow;
+  /*background-color:greenyellow;*/
   border-radius: 10px;
   
 }

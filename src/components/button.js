@@ -23,11 +23,11 @@ const PlusButton = () =>{
                 ]);
             }}><MdAddCircle size={50} color="#2687de" /></button>
 
-            <div class="color">
+           <button class="color">
                 {transition((style,item) => 
                     item ? <animated.div style={style} class="item1 colorpick" /> : ''
                 )}
-            </div>
+            </button> 
             <div class="color">
                 {transition((style,item) => 
                     item ? <animated.div style={style} class="item2 colorpick" /> : ''
