@@ -1,27 +1,21 @@
 import { render } from "@testing-library/react";
 import React,{useState} from "react";
-import {MdEdit,MdDelete} from 'react-icons/md';
+import {MdEdit,MdDelete, MdHideImage, MdOutlineSettingsInputHdmi} from 'react-icons/md';
 import EditNote from "./EditNote";
-const Note=({id,title,text,colour}) =>{
-    /*function CallEditNote(id)
-    {
-        render(
-        <div>{id}</div>
-        )
-    }*/
-    
+import deleteConfirmation from "./deleteConfirmation";
+const Note=({id,title,text,colour,handleDeleteNote}) =>{
+
     return(
         <div className="note" style={{backgroundColor:colour}}>
             <div >
                 <b>{title}</b>
-              
             </div>
             <span >
                 {text}
             </span>
             <div className="note-footer">
-                <button /*onClick={() => CallEditNote(id)}*/ ><MdEdit/></button>
-                <button><MdDelete/></button>
+                <button  ><MdEdit/></button>
+                <button onClick={() =>{handleDeleteNote(id)}}><MdDelete/></button>
             </div>
         </div>
     )

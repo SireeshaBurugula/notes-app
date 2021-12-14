@@ -1,5 +1,5 @@
 import Note from "./Note"
-const NotesList = ({notes}) =>{
+const NotesList = ({notes,handleDeleteNote}) =>{
     return(
         <div className="noteslist">
             { notes.map((note) => (
