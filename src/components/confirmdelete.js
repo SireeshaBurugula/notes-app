@@ -1,10 +1,16 @@
 import React from "react";
-const confirmdelete=()=>{
+import { render } from "@testing-library/react";
+const ConfirmDelete=({handleDeleteNote,id})=>{
     return(
-        <div>
-            hii
-        </div>
-    
-    );
+    <div className="delconfirmation">
+        <button onClick={() =>handleDeleteNote(id)}>
+            confirm delete
+        </button>
+        <button>
+            cancel
+        </button>
+
+    </div>
+    )
 }
-export default confirmdelete;
+export default ConfirmDelete;

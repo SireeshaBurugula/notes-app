@@ -1,7 +1,7 @@
 import NotesList from "./components/NotesList";
 import Search from "./components/Search";
 import NotesHeader from "./components/NotesHeader";
-import confirmdelete from "./components/confirmdelete";
+import ConfirmDelete from "./components/ConfirmDelete";
 import Button from "./components/button";
 import { nanoid } from 'nanoid';
 import  {useState} from 'react';
@@ -12,7 +12,7 @@ import { render } from "react-dom";
 
 const App =() => {
   const [notes,setNotes] = useState([
-  /*  {
+    {
        id:nanoid(), 
        title:'One',
        text:'first note',
@@ -115,19 +115,25 @@ const App =() => {
     
   ]);
   const [searchText,setSearchText]=useState("");
-  
+  const deleteNote = (id) =>{
+    const newNotes=notes.filter((note)=>note.id !== id)
+    setNotes(newNotes);
+  }
   return (
     <div className="container">
-      <NotesHeader/>
+      <NotesHeader/>  
       <Search handleSearchNote={setSearchText}/>
       <Split className='flex' sizes={[10,80]} style={{ height: 'calc(100vh - 4rem)' }}>
           <Split direction='horizontal'>
             <Button/>
           </Split>
           <NotesList 
-                notes={notes.filter((note)=>note.text.toLowerCase().includes(searchText.toLowerCase()) || note.title.toLowerCase().includes(searchText.toLowerCase()))}/>
+                notes={notes.filter((note)=>note.text.toLowerCase().includes(searchText.toLowerCase()) || note.title.toLowerCase().includes(searchText.toLowerCase()))}
+                handleDeleteNote={deleteNote}
+                />   
+         
       </Split>
-      <confirmdelete/>
+      
     </div>
   );
 }
