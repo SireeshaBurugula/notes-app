@@ -1,6 +1,6 @@
 import React from 'react'
 
-function confirmdelete({closedelModal,handleDeleteNote,id}) {
+function Confirmdelete({closedelModal,handleDeleteNote,id}) {
   return (
     <div className="confirmdelbg">
       <div className='confirmdelcontainer'>
@@ -20,4 +20,4 @@ function confirmdelete({closedelModal,handleDeleteNote,id}) {
   )
 }
 
-export default confirmdelete
+export default Confirmdelete;

@@ -1,6 +1,6 @@
 import React,{useState} from "react";
 import {MdEdit,MdDelete} from 'react-icons/md';
-import ConfirmDelete from "./ConfirmDelete";
+import Confirmdelete from "./Confirmdelete";
 import EditNote from "./EditNote";
 const Note = ({id,title,text,colour,handleDeleteNote,handleEditNote}) => { 
     const [opendelModal,setopendelModal] = useState(false);
@@ -23,7 +23,7 @@ const Note = ({id,title,text,colour,handleDeleteNote,handleEditNote}) => {
                 <MdDelete/></button>
             </div>
         </div>
-        {opendelModal && <ConfirmDelete closedelModal={setopendelModal} handleDeleteNote={handleDeleteNote} id={id}/>}
+        {opendelModal && <Confirmdelete closedelModal={setopendelModal} handleDeleteNote={handleDeleteNote} id={id}/>}
         {openeditModal && <EditNote closeeditModal={setopeneditModal} handleEditNote={handleEditNote} id={id} title={title} text={text} />}
         </div>
     )
