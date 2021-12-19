@@ -6,7 +6,7 @@ import { nanoid } from 'nanoid';
 import  {useState} from 'react';
 import Split from 'react-split';
 import { MdSportsRugby } from "react-icons/md";
-
+import {PlusButton} from "./components/button";
 
 
 const App =() => {
@@ -83,7 +83,14 @@ const App =() => {
   ]);
 
   
-
+  const addNew =(color) =>{
+    setNotes([...notes,{
+      id:nanoid(),
+      title:'twelve',
+      text:'sixth note',
+      colour:color,
+  }])
+  };
 
   //addNew()
   const [searchText,setSearchText]=useState("");
@@ -93,7 +100,7 @@ const App =() => {
       <Search handleSearchNote={setSearchText}/>
       <Split className='flex' sizes={[10,80]} style={{ height: 'calc(100vh - 4rem)' }}>
         <Split direction='horizontal'>
-          <Button notes={notes}/>
+          <Button handleNotes={addNew}/>
         </Split>
         <NotesList notes={notes.filter((note)=>note.text.toLowerCase().includes(searchText.toLowerCase()) || note.title.toLowerCase().includes(searchText.toLowerCase()))}/>
       </Split>
