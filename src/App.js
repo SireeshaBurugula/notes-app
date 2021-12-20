@@ -17,79 +17,80 @@ const App =() => {
        text:'first note',
        colour:'yellow',
     },
-    {
+    // {
       
-      id:nanoid(),
-      title:'Two',
-      text:'second note',
-      colour:'pink',
-    },
-    {
+    //   id:nanoid(),
+    //   title:'Two',
+    //   text:'second note',
+    //   colour:'pink',
+    // },
+    // {
       
-      id:nanoid(),
-      title:'Three',
-      text:'third note',
-      colour:'yellow',
-    },
-    {
+    //   id:nanoid(),
+    //   title:'Three',
+    //   text:'third note',
+    //   colour:'yellow',
+    // },
+    // {
       
-      id:nanoid(),
-      title:'Four',
-      text:'fourth note',
-      colour:'lightblue',
-    },
-    {
+    //   id:nanoid(),
+    //   title:'Four',
+    //   text:'fourth note',
+    //   colour:'lightblue',
+    // },
+    // {
       
-      id:nanoid(),
-      title:'Five',
-      text:'fifth note',
-      colour:'orange',
-    },
-    {
+    //   id:nanoid(),
+    //   title:'Five',
+    //   text:'fifth note',
+    //   colour:'orange',
+    // },
+    // {
       
-      id:nanoid(),
-      title:'Six',
-      text:'sixth note',
-      colour:'lightblue',
-    },
-    {
+    //   id:nanoid(),
+    //   title:'Six',
+    //   text:'sixth note',
+    //   colour:'lightblue',
+    // },
+    // {
       
-      id:nanoid(),
-      title:'Seven',
-      text:'sixth note',
-      colour:'lightgreen',
-    },
-    {
+    //   id:nanoid(),
+    //   title:'Seven',
+    //   text:'sixth note',
+    //   colour:'lightgreen',
+    // },
+    // {
       
-      id:nanoid(),
-      title:'Eight',
-      text:'sixth note',
-      colour:'yellow',
-    },
-    {
+    //   id:nanoid(),
+    //   title:'Eight',
+    //   text:'sixth note',
+    //   colour:'yellow',
+    // },
+    // {
       
-      id:nanoid(),
-      title:'Nine',
-      text:'sixth note',
-      colour:'pink',
-    },
-    {
+    //   id:nanoid(),
+    //   title:'Nine',
+    //   text:'sixth note',
+    //   colour:'pink',
+    // },
+    // {
       
-      id:nanoid(),
-      title:'Ten',
-      text:'sixth note',
-      colour:'lightgreen',
-    },
+    //   id:nanoid(),
+    //   title:'Ten',
+    //   text:'sixth note',
+    //   colour:'lightgreen',
+    // },
   ]);
 
   
   const addNew =(color) =>{
-    setNotes([...notes,{
+    setNotes(notes => [...notes,{
       id:nanoid(),
-      title:'twelve',
-      text:'sixth note',
+      title:"newtitle",
+      text:"newtext",
       colour:color,
-  }])
+    }])
+  console.log(notes);
   };
 
   //addNew()
@@ -102,7 +103,7 @@ const App =() => {
         <Split direction='horizontal'>
           <Button handleNotes={addNew}/>
         </Split>
-        <NotesList notes={notes.filter((note)=>note.text.toLowerCase().includes(searchText.toLowerCase()) || note.title.toLowerCase().includes(searchText.toLowerCase()))}/>
+        <NotesList notes={notes}/>
       </Split>
     </div>
   );
@@ -110,3 +111,4 @@ const App =() => {
 
 export default App;
 
+//notes.filter((note)=>note.text.toLowerCase().includes(searchText.toLowerCase()) || note.title.toLowerCase().includes(searchText.toLowerCase()))

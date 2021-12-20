@@ -7,10 +7,10 @@ const Note=({id,title,text,colour}) =>{
     return(
         <div className="note" style={{backgroundColor:colour}}>
             <div >
-                <b>{title}</b>
+                <b className="title">{title}</b>
               
             </div>
-            <span >
+            <span className="text">
                 {text}
             </span>
             <div className="note-footer">
