@@ -119,7 +119,6 @@ code {
   padding-right: 15 px;
   padding-top: 15 px;
   height:5px;
-  
 }
 
 .Button{
@@ -239,7 +238,20 @@ code {
   left:300px;
 }
 
+.TitleText {
+  border-width: 0 0 0 0;
+  width: 100%;
+  background-color: rgb(101, 101, 202);
+}
 
+.TitleText:focus {
+  outline: none;
+}
+
+
+.TitleText::placeholder {
+  color: black;
+  
 .confirmdelbg {
   top:0%;
   left:0%;

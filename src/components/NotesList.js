@@ -1,3 +1,4 @@
+
 import Note from "./Note"
 const NotesList = ({notes,handleDeleteNote,handleEditNote}) =>{
     return(

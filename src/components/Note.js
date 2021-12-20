@@ -1,3 +1,4 @@
+
 import React,{useState} from "react";
 import {MdEdit,MdDelete} from 'react-icons/md';
 import Confirmdelete from "./Confirmdelete";
@@ -9,9 +10,9 @@ const Note = ({id,title,text,colour,handleDeleteNote,handleEditNote}) => {
         <div>
         <div className="note" style={{backgroundColor:colour}}>
             <div >
-                <b>{title}</b>
+                <b className="title">{title}</b>
             </div>
-            <span >
+            <span className="text">
                 {text}
             </span>
             <div className="note-footer">
@@ -29,9 +30,3 @@ const Note = ({id,title,text,colour,handleDeleteNote,handleEditNote}) => {
     )
 }
 export default Note;
-
-/*
-
-  {() => ConfirmDelete({handleDeleteNote,id})}
-
-  */
