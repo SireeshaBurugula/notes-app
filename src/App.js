@@ -103,7 +103,7 @@ const App =() => {
         <Split direction='horizontal'>
           <Button handleNotes={addNew}/>
         </Split>
-        <NotesList notes={notes}/>
+        <NotesList notes={notes.filter((note)=>note.text.toLowerCase().includes(searchText.toLowerCase()) || note.title.toLowerCase().includes(searchText.toLowerCase()))}/>
       </Split>
     </div>
   );
