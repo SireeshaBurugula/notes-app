@@ -8,7 +8,6 @@ import Split from 'react-split';
 import { MdSportsRugby } from "react-icons/md";
 import {PlusButton} from "./components/button";
 
-
 const App =() => {
   const [notes,setNotes] = useState([
     {
@@ -47,6 +46,7 @@ const App =() => {
     // },
     // {
       
+
     //   id:nanoid(),
     //   title:'Six',
     //   text:'sixth note',
@@ -95,16 +95,36 @@ const App =() => {
 
   //addNew()
   const [searchText,setSearchText]=useState("");
+  const deleteNote = (id,closedelModal) =>{
+    const newNotes=notes.filter((note)=>note.id !== id)
+    setNotes(newNotes);
+    closedelModal(false);
+  }
+  const editNote = (id,editedtitle,editedtext,closeeditModal) =>{
+      const editedNotes=notes.map((note)=>
+      note.id === id 
+      ?{...note,title:editedtitle,text:editedtext}:note
+      );
+      closeeditModal(false);
+      setNotes(editedNotes);
+      //console.log(editedNotes);
+      //console.log(notes);
+      
+  }
   return (
     <div className="container">
-      <NotesHeader/>
+      <NotesHeader/>  
       <Search handleSearchNote={setSearchText}/>
       <Split className='flex' sizes={[10,80]} style={{ height: 'calc(100vh - 4rem)' }}>
-        <Split direction='horizontal'>
-          <Button handleNotes={addNew}/>
-        </Split>
-        <NotesList notes={notes.filter((note)=>note.text.toLowerCase().includes(searchText.toLowerCase()) || note.title.toLowerCase().includes(searchText.toLowerCase()))}/>
+          <Split direction='horizontal'>
+          <Button handleNotes={addNew}/> 
+          </Split>
+        <NotesList 
+                notes={notes.filter((note)=>note.text.toLowerCase().includes(searchText.toLowerCase()) || note.title.toLowerCase().includes(searchText.toLowerCase()))}
+                handleDeleteNote={deleteNote} handleEditNote={editNote}
+                />   
       </Split>
+
     </div>
   );
 }
