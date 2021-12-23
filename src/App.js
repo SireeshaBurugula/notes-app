@@ -10,19 +10,14 @@ import {PlusButton} from "./components/button";
 
 const App =() => {
   const [notes,setNotes] = useState([
+    
     {
-       id:nanoid(), 
-       title:'One',
-       text:'first note',
-       colour:'yellow',
-    },
-    // {
       
-    //   id:nanoid(),
-    //   title:'Two',
-    //   text:'second note',
-    //   colour:'pink',
-    // },
+      id:nanoid(),
+      title:'One',
+      text:'First note',
+      colour:'pink',
+    },
     // {
       
     //   id:nanoid(),
@@ -83,12 +78,13 @@ const App =() => {
   ]);
 
   
-  const addNew =(color) =>{
+  const addNew =(noteColor,title,text) =>{
+    console.log(noteColor,{noteColor})
     setNotes(notes => [...notes,{
       id:nanoid(),
-      title:"newtitle",
-      text:"newtext",
-      colour:color,
+      title:title,
+      text:text,
+      colour:noteColor,
     }])
   console.log(notes);
   };
