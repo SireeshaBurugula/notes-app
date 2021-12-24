@@ -75,13 +75,13 @@ code {
   gap: 1rem;
   width: 97%;
   padding: 1 rem;
-  justify-content: space-between;
+  justify-content: left;
    display: grid;
    margin-left: auto;
    margin-bottom: auto;
    margin-right: auto;
    padding-left: 2%;
-   grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+   grid-template-columns: repeat(auto-fit,minmax(250px,250px));
    z-index: 1;
 }
 .container{
@@ -252,7 +252,6 @@ code {
 .TitleText::placeholder {
   color: black;
 }
-
 .confirmdelbg {
   top:0%;
   left:0%;
@@ -387,3 +386,107 @@ code {
   font-size: 20px;
   cursor: pointer;
 }
+
+.addbg {
+  top:0%;
+  left:0%;
+  width:100%;
+  height:100%;
+  background-color:rgba(0, 0, 0, 0.85);
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index:2;
+}
+
+.addcont {
+  width: 40%;
+  height: 40%;
+  border-radius:3%;
+  background-color:#faf0e6;
+  box-shadow: rgba(0, 0, 0, 0.9) 0px 5px 15px;
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+}
+
+.confirmAddx{
+  width:7%;
+  height:7%;
+  margin-left: 90%;
+  background-color:crimson;
+  border-radius: 8px;
+}
+
+.addcont .addtitle {
+  display: inline-block;
+  text-align: left;
+  margin-top: 10px;
+  
+}
+
+
+.addcont .addtext {
+  flex: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2 rem;
+  text-align: left;
+  white-space: pre-wrap;
+}
+
+.addtitle {
+  border-top: 0;
+  border-bottom: 0;
+  border-left: 0;
+  border-right: 0;
+  background: transparent;
+  border: none;
+  width: 100%;
+  margin-left: 0px;
+}
+
+
+
+.addtext {
+  margin-top: 10px;
+  border: 0 0 0 0;
+  background: transparent;
+  border: none;
+  width: 100%;
+}
+
+.addtext:focus {
+  outline: none;
+}
+
+.addtitle:focus {
+  outline: none;
+}
+
+.addcont .addfooter {
+  flex: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.addfooter {
+  margin-top: 150px;
+}
+
+.addcont .addfooter button {
+  width: 150px;
+  height: 45px;
+  margin: 10px;
+  border: none;
+  background-color: cornflowerblue;
+  color: white;
+  border-radius: 8px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
