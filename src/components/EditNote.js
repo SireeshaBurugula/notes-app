@@ -3,6 +3,8 @@ import React,{useState} from 'react'
 function EditNote({closeeditModal,handleEditNote,id,title,text}) {
   const [editedtitle,seteditedtitle]=useState({title});
   const [editedtext,seteditedtext]=useState({text});
+  console.log({title});
+  console.log({text});
   return (
     <div className="editbg">
       <div className='editcontainer'>

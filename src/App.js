@@ -12,19 +12,25 @@ const App =() => {
   const [notes,setNotes] = useState([
     
     {
-      
-      id:nanoid(),
-      title:'One',
-      text:'First note',
-      colour:'pink',
+       id:nanoid(), 
+       title:'One',
+       text:'first note',
+       colour:'yellow',
     },
-    // {
+     {
       
-    //   id:nanoid(),
-    //   title:'Three',
-    //   text:'third note',
-    //   colour:'yellow',
-    // },
+       id:nanoid(),
+       title:'Two',
+       text:'second note',
+       colour:'pink',
+     },
+    {
+      
+       id:nanoid(),
+       title:'Three',
+       text:'third note',
+       colour:'yellow',
+     },
     // {
       
     //   id:nanoid(),
@@ -102,8 +108,8 @@ const App =() => {
       ?{...note,title:editedtitle,text:editedtext}:note
       );
       closeeditModal(false);
-      setNotes(editedNotes);
-      //console.log(editedNotes);
+      //setNotes(editedNotes);
+      console.log(editedNotes);
       //console.log(notes);
       
   }
