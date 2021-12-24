@@ -24,6 +24,9 @@ code {
   max-width: 350px;
   z-index:0;
   backdrop-filter: "blur(7px)";
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 
@@ -431,13 +434,18 @@ code {
   flex: 50%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   font-size: 1.2 rem;
   text-align: left;
-  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  white-space: initial;
 }
 
-.addtitle {
+.addtext {
+  height: 200px;
+}
+
+.atitle {
   border-top: 0;
   border-bottom: 0;
   border-left: 0;
@@ -446,23 +454,26 @@ code {
   border: none;
   width: 100%;
   margin-left: 0px;
+  overflow-wrap: break-word;
+  word-break: break-all;
 }
 
-
-
-.addtext {
+.atext {
   margin-top: 10px;
   border: 0 0 0 0;
   background: transparent;
   border: none;
   width: 100%;
+  overflow-wrap: break-word;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
-.addtext:focus {
+.atext:focus {
   outline: none;
 }
 
-.addtitle:focus {
+.atitle:focus {
   outline: none;
 }
 
@@ -475,7 +486,7 @@ code {
 }
 
 .addfooter {
-  margin-top: 150px;
+  margin-top: 0px;
 }
 
 .addcont .addfooter button {

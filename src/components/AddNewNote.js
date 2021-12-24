@@ -16,11 +16,11 @@ const AddNewNote = ({openModal,handleNote,noteColor}) => {
                 <button className='confirmAddx' onClick={()=>{
                     openModal(false);
                 }}>X</button>
-                <div>
-                    <input type="text" className='addtitle' placeholder='Enter Title' onChange={(e)=>setTitle(e.target.value)}></input>
+                <div className='addtitle'>
+                    <input type="text" className='atitle' placeholder='Enter Title' onChange={(e)=>setTitle(e.target.value)}></input>
                 </div>
-                <div>
-                    <input type="textarea" className='addtext' placeholder='Enter text' cols="50" rows="10" onChange={(e)=>setText(e.target.value)}></input>
+                <div className='addtext'>
+                    <textarea type="textarea" className='atext' placeholder='Enter text' cols="50" rows="10" onChange={(e)=>setText(e.target.value)}></textarea>
                 </div>
                 <div className='addfooter'>
                     <button onClick={()=>{
