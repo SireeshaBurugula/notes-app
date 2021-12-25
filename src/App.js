@@ -97,7 +97,7 @@ const App =() => {
 
   //addNew()
   const [searchText,setSearchText]=useState("");
-  const deleteNote = (id,closedelModal) =>{
+  const deleteNote = (id,closedelModal) =>{  
     const newNotes=notes.filter((note)=>note.id !== id)
     setNotes(newNotes);
     closedelModal(false);
@@ -108,9 +108,7 @@ const App =() => {
       ?{...note,title:editedtitle,text:editedtext}:note
       );
       closeeditModal(false);
-      //setNotes(editedNotes);
-      console.log(editedNotes);
-      //console.log(notes);
+      setNotes(editedNotes);
       
   }
   return (
