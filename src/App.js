@@ -3,7 +3,7 @@ import Search from "./components/Search";
 import NotesHeader from "./components/NotesHeader";
 import Button from "./components/button";
 import { nanoid } from 'nanoid';
-import  {useState} from 'react';
+import  {useState,useEffect} from 'react';
 import Split from 'react-split';
 import { MdSportsRugby } from "react-icons/md";
 import {PlusButton} from "./components/button";
@@ -115,9 +115,9 @@ const App =() => {
     <div className="container">
       <NotesHeader/>  
       <Search handleSearchNote={setSearchText}/>
-      <Split className='flex' sizes={[10,80]} style={{ height: 'calc(100vh - 4rem)' }}>
-          <Split direction='horizontal'>
-          <Button handleNotes={addNew}/> 
+      <Split sizes={[10,80]} style={{ height: 'calc(100vh - 4rem)' }}>
+          <Split className='sidebar' direction='horizontal'>
+          <Button  handleNotes={addNew}/> 
           </Split>
         <NotesList 
                 notes={notes.filter((note)=>note.text.toLowerCase().includes(searchText.toLowerCase()) || note.title.toLowerCase().includes(searchText.toLowerCase()))}

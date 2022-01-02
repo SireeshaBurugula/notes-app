@@ -27,25 +27,24 @@ const PlusButton = ({handleNotes}) =>{
                     {y:-100, delay: 200},
                 ]);
             }}><MdAddCircle size={50} color="#2687de" /></button>
-
            <div class="color">
                 {transition((style,item) => 
-                    item ? <animated.button onClick={() => handleProcess(0)} style={style} class="item1 colorpick" /> : ''
+                    item ? <animated.button onClick={() => handleProcess(0)} style={style} class="item item1 colorpick" /> : ''
                 )}
             </div> 
             <div class="color">
                 {transition((style,item) => 
-                  item ? <animated.button onClick={() => handleProcess(1)} style={style} class="item2 colorpick" /> : ''
+                  item ? <animated.button onClick={() => handleProcess(1)} style={style} class="item item2 colorpick" /> : ''
                 )}
             </div>
             <div class="color">
                 {transition((style,item) => 
-                    item ? <animated.button onClick={() => handleProcess(2)} style={style} class="item3 colorpick" /> : ''
+                    item ? <animated.button onClick={() => handleProcess(2)} style={style} class="item item3 colorpick" /> : ''
                 )}
             </div>
             <div class="color">
                 {transition((style,item) => 
-                    item ? <animated.button onClick={() => handleProcess(3)} style={style} class="item4 colorpick" /> : ''
+                    item ? <animated.button onClick={() => handleProcess(3)} style={style} class="item item4 colorpick" /> : ''
                 )}
             </div>
             {modalOpen && <AddNewNote openModal={setModalOpen} handleNote={handleNotes} noteColor={color}/>}
