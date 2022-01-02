@@ -63,9 +63,9 @@ const App =() => {
 
       <NotesHeader/>  
       <Search handleSearchNote={setSearchText}/>
-      <Split className='flex' sizes={[10,80]} style={{ height: 'calc(100vh - 4rem)' }}>
-          <Split direction='horizontal'>
-          <Button handleNotes={addNew}/> 
+      <Split sizes={[10,80]} style={{ height: 'calc(100vh - 4rem)' }}>
+          <Split className='sidebar' direction='horizontal'>
+          <Button  handleNotes={addNew}/> 
           </Split>
         <NotesList 
                 notes={notes.filter((note)=>note.text.toLowerCase().includes(searchText.toLowerCase()) || note.title.toLowerCase().includes(searchText.toLowerCase()))}
