@@ -3,116 +3,64 @@ import Search from "./components/Search";
 import NotesHeader from "./components/NotesHeader";
 import Button from "./components/button";
 import { nanoid } from 'nanoid';
-import  {useState} from 'react';
+import  {useState,useEffect} from 'react';
 import Split from 'react-split';
-import { MdSportsRugby } from "react-icons/md";
-import {PlusButton} from "./components/button";
 
 const App =() => {
   const [notes,setNotes] = useState([
-    
-    {
-       id:nanoid(), 
-       title:'One',
-       text:'first note',
-       colour:'yellow',
-    },
-     {
-      
-       id:nanoid(),
-       title:'Two',
-       text:'second note',
-       colour:'pink',
-     },
-    {
-      
-       id:nanoid(),
-       title:'Three',
-       text:'third note',
-       colour:'yellow',
-     },
-    // {
-      
-    //   id:nanoid(),
-    //   title:'Four',
-    //   text:'fourth note',
-    //   colour:'lightblue',
-    // },
-    // {
-      
-    //   id:nanoid(),
-    //   title:'Five',
-    //   text:'fifth note',
-    //   colour:'orange',
-    // },
-    // {
-      
+    ]
+  )
 
-    //   id:nanoid(),
-    //   title:'Six',
-    //   text:'sixth note',
-    //   colour:'lightblue',
-    // },
-    // {
-      
-    //   id:nanoid(),
-    //   title:'Seven',
-    //   text:'sixth note',
-    //   colour:'lightgreen',
-    // },
-    // {
-      
-    //   id:nanoid(),
-    //   title:'Eight',
-    //   text:'sixth note',
-    //   colour:'yellow',
-    // },
-    // {
-      
-    //   id:nanoid(),
-    //   title:'Nine',
-    //   text:'sixth note',
-    //   colour:'pink',
-    // },
-    // {
-      
-    //   id:nanoid(),
-    //   title:'Ten',
-    //   text:'sixth note',
-    //   colour:'lightgreen',
-    // },
-  ]);
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const getData = localStorage.getItem('notes');
+      console.log(getData);
+      if (getData !== '' && getData !== null) {
+        return setNotes(JSON.parse(getData));
+      }
+      return setNotes([]);
+    }
+  }, []);
 
-  
+
   const addNew =(noteColor,title,text) =>{
     console.log(noteColor,{noteColor})
-    setNotes(notes => [...notes,{
+    const newNotes=[...notes,{
       id:nanoid(),
       title:title,
       text:text,
       colour:noteColor,
-    }])
+    }];
+
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('notes', JSON.stringify(newNotes));
+      setNotes(newNotes);
+    }
   console.log(notes);
   };
 
-  //addNew()
   const [searchText,setSearchText]=useState("");
   const deleteNote = (id,closedelModal) =>{  
-    const newNotes=notes.filter((note)=>note.id !== id)
-    setNotes(newNotes);
+  const newNotes=notes.filter((note)=>note.id !== id)
     closedelModal(false);
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('notes', JSON.stringify(newNotes));
+      setNotes(newNotes);
+    }
   }
   const editNote = (id,editedtitle,editedtext,closeeditModal) =>{
-      const editedNotes=notes.map((note)=>
+      let editedNotes=notes.map((note)=>
       note.id === id 
       ?{...note,title:editedtitle,text:editedtext}:note
       );
       closeeditModal(false);
       setNotes(editedNotes);
+      console.log(notes);
       
   }
   return (
     <div className="container">
+
       <NotesHeader/>  
       <Search handleSearchNote={setSearchText}/>
       <Split className='flex' sizes={[10,80]} style={{ height: 'calc(100vh - 4rem)' }}>
@@ -124,7 +72,6 @@ const App =() => {
                 handleDeleteNote={deleteNote} handleEditNote={editNote}
                 />   
       </Split>
-
     </div>
   );
 }
