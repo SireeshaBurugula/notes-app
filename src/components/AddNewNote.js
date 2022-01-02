@@ -1,8 +1,8 @@
 import react,{useState} from 'react';
 
 const AddNewNote = ({openModal,handleNote,noteColor}) => {
-    const [Title,setTitle] = useState("title")
-    const [Text,setText] = useState("text")
+    const [Title,setTitle] = useState("")
+    const [Text,setText] = useState("")
 
     const CloseAfterAdding = () => {
         console.log(noteColor);
