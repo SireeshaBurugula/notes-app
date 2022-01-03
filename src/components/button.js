@@ -8,7 +8,7 @@ const PlusButton = ({handleNotes}) =>{
     const [items, setItems] = useState([]);
     const [modalOpen, setModalOpen] = useState(false)
     const [color,setcolor] = useState("")
-    const colors = ['rgb(101, 101, 202)','orange','rgb(46, 173, 46)','rgb(243, 61, 61)']
+    const colors = ['#ed77db','orange','#5fb864','#32a5ed']
 
     const handleProcess = (i) => {
         setModalOpen(true);
