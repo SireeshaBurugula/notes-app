@@ -5,6 +5,7 @@ import Button from "./components/button";
 import { nanoid } from 'nanoid';
 import  {useState,useEffect} from 'react';
 import Split from 'react-split';
+import swal from 'sweetalert';
 
 const App =() => {
   const [notes,setNotes] = useState([
@@ -24,7 +25,10 @@ const App =() => {
 
 
   const addNew =(noteColor,title,text) =>{
-    console.log(noteColor,{noteColor})
+    if(text==="" || title===""){
+      swal("Please fill all the details")
+    }
+    else{
     const newNotes=[...notes,{
       id:nanoid(),
       title:title,
@@ -36,6 +40,7 @@ const App =() => {
       localStorage.setItem('notes', JSON.stringify(newNotes));
       setNotes(newNotes);
     }
+  }
   console.log(notes);
   };
 
